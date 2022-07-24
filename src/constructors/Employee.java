@@ -1,25 +1,36 @@
 package constructors;
 
 public class Employee {
-    public String name, jobTitle;
+    public String name,jobTitle;
     public int ID;
-    public double salary; // instance variable it belongs to Object
-    // if we dont initialize fields they will carry standart values null, 0, 0.0 ie.
-    public static String companyName; // static field belongs to Class objects always inherit static variables
+    public double salary;             // instance variable, belongs to Object
+    public static String companyName; // static field belongs to Class
 
     static {
-        companyName = "CodeBulls";
+        companyName="CodeBulls"; // this value is same for all the objects of this class
     }
-    public Employee () {
-        salary = 10000; // when I create an Employee object with default constructor their salary will be 10000 as default
+
+    public Employee() {
+        salary = 10000;  // when I create an Employee object with default constructor, their salary will be 10000 as default.
     }
-    public Employee (String name, String jobTitle, int Id, double salary) {
-        this.name = name;
+
+    public Employee(String n, String jobTitle, int ID, double salary) {
+        name = n;
         this.jobTitle = jobTitle;
         this.ID = ID;
         this.salary = salary;
-
     }
 
 
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", jobTitle='" + jobTitle + '\'' +
+                ", ID=" + ID +
+                ", salary=" + salary +
+                ",company Name=" + companyName+
+                '}';
+    }
 }
+
+
